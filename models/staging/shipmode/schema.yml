@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: shipmode
+    database: snowflake_sample_data
+    schema: tpcds_sf100tcl
+    tables:
+      - name: ship_mode
+        columns:
+          - name: sm_ship_mode_sk
+            tests:
+              - unique
+              - not_null
