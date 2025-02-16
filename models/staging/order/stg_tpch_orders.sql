@@ -9,7 +9,8 @@ select
     o_orderstatus as status_code,
     o_totalprice as total_price,
     o_orderdate as order_date,
-    -- DATEADD(DAY, -10, CURRENT_TIMESTAMP()) as updated_at
+    DATEADD(DAY, -10, CURRENT_TIMESTAMP()) as updated_at
+    -- CURRENT_DATE()
 
 from
     {{ source('tpch', 'orders') }} AS o
